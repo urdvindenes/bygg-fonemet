@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lyd-laboratoriet: Bygg fonemet</title>
+    <link rel="stylesheet" href="style_bygg.css"> <!-- Ny CSS-fil -->
+</head>
+<body>
+    <div id="game-container">
+        <h1>Bygg fonemet 🛠️</h1>
+        <p id="instructions">Velg egenskapene som beskriver lyden.</p>
+
+        <div id="target-phoneme-container">
+            Mål-lyd: <span id="target-phoneme">?</span>
+        </div>
+
+        <!-- --- Funksjonsvelgere (Skjules/vises av JS) --- -->
+
+        <!-- Konsonant-egenskaper -->
+        <div id="consonant-features" class="feature-set" style="display: none;">
+            <h2>Konsonantegenskaper</h2>
+            <div class="feature-group">
+                <label for="place-select">Artikulasjonssted:</label>
+                <select id="place-select" name="place">
+                    <option value="">-- Velg sted --</option>
+                    <option value="bilabial">Bilabial (lepper)</option>
+                    <option value="labiodental">Labiodental (leppe-tann)</option>
+                    <option value="alveolar">Alveolar (gom)</option>
+                    <option value="postalveolar">Postalveolar (bak gom)</option>
+                    <option value="palatal">Palatal (hard gane)</option>
+                    <option value="velar">Velar (bløt gane)</option>
+                    <option value="uvular">Uvular (drøvel)</option>
+                    <!-- <option value="glottal">Glottal (strupe)</option> -->
+                </select>
+            </div>
+            <div class="feature-group">
+                <label for="manner-select">Artikulasjonsmåte:</label>
+                <select id="manner-select" name="manner">
+                    <option value="">-- Velg måte --</option>
+                    <option value="plosiv">Plosiv (lukke)</option>
+                    <option value="frikativ">Frikativ (trang)</option>
+                    <option value="nasal">Nasal (nese)</option>
+                    <option value="lateral">Lateral (side)</option>
+                    <option value="approksimant">Approksimant (R/L-aktig)</option>
+                    <!-- <option value="flikk">Flikk (r)</option> -->
+                    <!-- <option value="flapp">Flapp (tjukk l)</option> -->
+                </select>
+            </div>
+            <div class="feature-group">
+                <label>Stemthet:</label>
+                <input type="radio" id="voicing-voiced" name="voicing" value="stemt">
+                <label for="voicing-voiced">Stemt</label>
+                <input type="radio" id="voicing-voiceless" name="voicing" value="ustemt">
+                <label for="voicing-voiceless">Ustemt</label>
+            </div>
+        </div>
+
+        <!-- Vokal-egenskaper -->
+        <div id="vowel-features" class="feature-set" style="display: none;">
+            <h2>Vokalegenskaper</h2>
+            <div class="feature-group">
+                <label for="height-select">Høyde (åpning):</label>
+                <select id="height-select" name="height">
+                    <option value="">-- Velg høyde --</option>
+                    <option value="trong">Trong</option>
+                    <option value="midtre">Midtre</option>
+                    <option value="open">Open</option>
+                </select>
+            </div>
+            <div class="feature-group">
+                <label for="backness-select">Posisjon:</label>
+                <select id="backness-select" name="backness">
+                    <option value="">-- Velg posisjon --</option>
+                    <option value="fremre">Fremre</option>
+                    <option value="sentral">Sentral</option> <!-- La oss inkludere sentral for /a/ -->
+                    <option value="bakre">Bakre</option>
+                </select>
+            </div>
+             <div class="feature-group">
+                <label>Leppestilling:</label>
+                <input type="radio" id="rounding-rounded" name="rounding" value="runda">
+                <label for="rounding-rounded">Runda</label>
+                <input type="radio" id="rounding-unrounded" name="rounding" value="urunda">
+                <label for="rounding-unrounded">Urunda</label>
+            </div>
+             <!-- Lengde kan legges til her senere -->
+        </div>
+
+        <!-- --- Kontrollknapper og Feedback --- -->
+        <div id="controls">
+            <button id="check-button">✔️ Sjekk svar</button>
+            <button id="next-button" style="display: none;">Neste lyd ➡️</button>
+        </div>
+
+        <div id="feedback-area">
+             <!-- Feedback kommer her -->
+        </div>
+         <div id="score-container">
+             Score: <span id="score-display">0</span>
+        </div>
+    </div>
+
+    <script src="script_bygg.js"></script> <!-- Ny JS-fil -->
+</body>
+</html>
