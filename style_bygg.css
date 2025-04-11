@@ -1,0 +1,137 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #e8f4f8; /* Litt lysere blå */
+    color: #333;
+}
+
+#game-container {
+    background-color: #fff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 600px;
+    width: 90%;
+}
+
+h1 {
+    color: #005f87; /* Mørkere blå */
+    margin-bottom: 15px;
+}
+h2 {
+    color: #333;
+    font-size: 1.2em;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+#target-phoneme-container {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    display: inline-block; /* For å ikke ta full bredde */
+}
+
+#target-phoneme {
+    font-weight: bold;
+    font-size: 1.8em; /* Større IPA */
+    color: #d9534f; /* Rødlig for å skille seg ut */
+}
+
+.feature-set {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fafafa;
+    text-align: left; /* Bedre for skjemaelementer */
+}
+
+.feature-group {
+    margin-bottom: 15px;
+}
+
+.feature-group label { /* Både for select og radio/checkbox */
+    display: block; /* Label over select */
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.feature-group select {
+    width: 100%; /* Ta opp tilgjengelig bredde */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Inkluder padding/border i bredden */
+    font-size: 1em;
+}
+
+.feature-group input[type="radio"] {
+    margin-right: 5px;
+}
+.feature-group input[type="radio"] + label { /* Label ved siden av radio */
+    display: inline-block;
+    margin-right: 15px;
+    font-weight: normal; /* Normal vekt for radio-label */
+}
+
+#controls {
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+#controls button {
+    background-color: #0077cc; /* Blå */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: background-color 0.2s ease;
+}
+
+#controls button:hover {
+    background-color: #005f87;
+}
+#controls button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+}
+
+#feedback-area {
+    margin-top: 20px;
+    padding: 10px;
+    min-height: 1.5em;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.correct-feedback {
+    background-color: #dff0d8; /* Lys grønn bakgrunn */
+    color: #3c763d; /* Mørk grønn tekst */
+    border: 1px solid #d6e9c6;
+}
+
+.incorrect-feedback {
+     background-color: #f2dede; /* Lys rød bakgrunn */
+    color: #a94442; /* Mørk rød tekst */
+    border: 1px solid #ebccd1;
+}
+
+#score-container {
+    margin-top: 15px;
+    font-size: 1em;
+    color: #555;
+}
